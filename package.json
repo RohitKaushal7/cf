@@ -9,8 +9,7 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "predeploy": "npm run build",
+    "build": "parcel build index.html --public-url ./",
     "deploy": "gh-pages -d dist"
   },
   "license": "MIT",
