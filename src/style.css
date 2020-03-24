@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Product+Sans|Open+Sans|Roboto|Source+Sans+Pro&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Product Sans", "Roboto", "Open Sans", "Montserrat";
+}
+* {
+  box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.container {
+  width: 80%;
+  max-width: 1500px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}

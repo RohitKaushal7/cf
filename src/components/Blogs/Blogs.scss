@@ -1,0 +1,19 @@
+.blogs {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  h1 {
+    margin-bottom: 0;
+  }
+  .desc {
+    margin-bottom: 2em;
+    color: #999;
+  }
+  .items {
+    max-height: 20em;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

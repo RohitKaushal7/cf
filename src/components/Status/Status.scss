@@ -1,0 +1,18 @@
+.state {
+  display: flex;
+  align-items: center;
+
+  * {
+    display: inline-block;
+  }
+
+  .dot {
+    background: #00c510;
+    padding: 0.3rem;
+    border-radius: 50%;
+  }
+  .last-online {
+    margin-left: 1rem;
+    color: #666;
+  }
+}

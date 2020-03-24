@@ -1,0 +1,43 @@
+.ch {
+  animation: new 3s;
+}
+
+@keyframes new {
+  from {
+    color: red;
+    background: rgb(255, 244, 224);
+  }
+  to {
+    color: black;
+  }
+}
+
+.fancyText {
+  position: relative;
+  transition: all 0.2s;
+}
+
+.fancyText > * {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.fancyText input {
+  color: transparent;
+  z-index: 4;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+}
+::selection {
+  background: #aaa;
+}
+.fancyText .highlighted {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  user-select: none;
+  pointer-events: none;
+}

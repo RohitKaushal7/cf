@@ -1,0 +1,98 @@
+.contests {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  margin: 0 1em;
+  h1 {
+    margin-bottom: 0;
+  }
+  .desc {
+    margin-bottom: 2em;
+    color: #999;
+  }
+  .items {
+    max-height: 50em;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+  }
+}
+
+.contest {
+  background: #fffb;
+  border-radius: 1em;
+  position: relative;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 0.3em 0;
+  transition: all 0.2s;
+  cursor: default;
+
+  &:hover {
+    background: #eeee;
+  }
+
+  .date,
+  .c_id {
+    display: inline-block;
+  }
+  .c_id {
+    font-weight: bold;
+    color: #ccc;
+  }
+
+  .rank {
+    color: #0079a8;
+    font-weight: bold;
+  }
+  .light {
+    color: #777;
+    font-weight: normal;
+  }
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+
+    .right {
+      min-width: 5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .name {
+    font-size: 1.4em;
+    p {
+      margin-bottom: 0.5em;
+      margin-top: 0.5em;
+    }
+  }
+
+  .date {
+    color: #666;
+    font-size: 0.8em;
+    display: inline-block;
+    position: relative;
+    max-width: 15em;
+    margin-right: 1em;
+  }
+  .change {
+    color: #666;
+    font-size: 1.5em;
+    display: inline-block;
+    max-width: 3em;
+    font-weight: bold;
+  }
+  .newRating {
+    color: #ddd;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0.5em;
+  }
+}

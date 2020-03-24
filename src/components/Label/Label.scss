@@ -1,0 +1,15 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  transition: all 0.2s;
+  cursor: default;
+
+  .for {
+    color: #666;
+    font-size: 0.8em;
+  }
+  .value {
+    font-size: 1.5em;
+  }
+}

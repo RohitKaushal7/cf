@@ -1,0 +1,46 @@
+.flex-v {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8em;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  .avatar {
+    overflow: hidden;
+    border-radius: 1em;
+    height: 20em;
+    width: 20em;
+    text-align: center;
+    // box-shadow: 0 0 20px #0001;
+    img {
+      height: 100%;
+      //   width: 100%;
+    }
+  }
+  .content {
+    margin-left: 4em;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 4em;
+      margin-bottom: 0.2em;
+    }
+
+    .rating,
+    .best-rating {
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
+
+    .rating {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    .best-rating {
+      color: #444;
+    }
+  }
+}

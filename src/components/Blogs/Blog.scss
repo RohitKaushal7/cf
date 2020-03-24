@@ -1,0 +1,64 @@
+.blog {
+  background: #fff;
+  border-radius: 1em;
+  position: relative;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 1em 0.2em 0;
+  transition: all 0.2s;
+  cursor: default;
+
+  &:hover {
+    background: #eeee;
+  }
+
+  .lang {
+    position: absolute;
+    padding: 0.1em 0.3em;
+    border-radius: 0.5em;
+    font-size: 0.8em;
+    // color: #fff;
+    color: #00c510;
+    background: #00c51022;
+    font-weight: bold;
+    right: 1em;
+    top: 0.5em;
+  }
+  .title {
+    font-size: 1.4em;
+    p {
+      margin-bottom: 0.5em;
+      margin-top: 0.5em;
+    }
+  }
+  .tags {
+    display: flex;
+    margin-bottom: 0.5em;
+    .tag {
+      padding: 0.5em;
+      background: #0079a822;
+      color: #0079a8;
+      border-radius: 0.2em;
+      margin-right: 1em;
+      font-size: 0.6em;
+      font-weight: bold;
+    }
+  }
+
+  .mod {
+    color: #666;
+    font-size: 0.8em;
+    display: inline-block;
+    max-width: 15em;
+  }
+  .votes {
+    color: #666;
+    font-size: 0.8em;
+    margin-left: 1em;
+    display: inline-block;
+    max-width: 3em;
+    font-weight: bold;
+  }
+}

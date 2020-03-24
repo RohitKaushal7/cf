@@ -1,0 +1,21 @@
+.btn {
+  color: #2583ff;
+  border-radius: 1em;
+  border: 2px solid #2583ff;
+  background: #fff;
+  padding: 0.5em 1em;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background: #2583ff;
+    color: white;
+  }
+}
+
+.logout {
+  position: absolute;
+  top: 2em;
+  right: 3em;
+}
