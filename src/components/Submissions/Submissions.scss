@@ -67,6 +67,8 @@
         .tags {
           display: inline-flex;
           margin-bottom: 0.5em;
+          max-width: 30em;
+          flex-wrap: wrap;
           .tag {
             padding: 0.5em;
             background: #0079a822;
