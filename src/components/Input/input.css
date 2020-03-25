@@ -1,7 +1,5 @@
 .ch {
   animation: new 3s;
-  /* min-width: 0.29em;
-  display: inline-block; */
 }
 
 @keyframes new {
@@ -24,15 +22,26 @@
   margin: 0.5rem 1rem;
   font-size: 4rem;
   font-weight: bold;
+  letter-spacing: normal;
+}
+
+label {
+  display: block;
+  font-size: 1rem !important;
+  color: #000d;
 }
 
 .fancyText input {
   color: transparent;
   z-index: 4;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 4px solid #ddd;
   outline: none;
 }
+::placeholder {
+  color: #0003;
+}
+
 ::selection {
   background: #aaa;
 }

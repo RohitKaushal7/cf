@@ -11,7 +11,7 @@ const Home = props => {
         <form action="/dashboard" onSubmit={props.onSubmit}>
           <Input
             type={"text"}
-            placeholder="Enter cf handle"
+            placeholder="tourist"
             value={props.handle}
             onChange={props.onChange}
           />

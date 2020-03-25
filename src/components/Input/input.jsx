@@ -15,10 +15,12 @@ class Input extends Component {
       <div className="fancyText">
         <input
           type={this.props.type}
+          id="handle"
           value={this.props.value}
           placeholder={this.props.placeholder}
           onChange={this.props.onChange}
         />
+        <label htmlFor="handle">Enter your codeforces handle above</label>
         <div className="highlighted">{elems}</div>
       </div>
     );
