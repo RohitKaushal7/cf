@@ -1,5 +1,7 @@
 .ch {
   animation: new 3s;
+  /* min-width: 0.29em;
+  display: inline-block; */
 }
 
 @keyframes new {

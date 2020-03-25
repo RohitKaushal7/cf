@@ -13,7 +13,8 @@ class App extends Component {
     error: null
   };
   handleChange = e => {
-    this.setState({ handle: e.target.value });
+    let value = e.target.value.split(" ").join("");
+    this.setState({ handle: value });
   };
   componentDidMount = () => {
     let handle = sessionStorage.getItem("handle");
