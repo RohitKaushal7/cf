@@ -32,25 +32,48 @@ class App extends Component {
       text.style.transform = "translate(0,-3rem)";
     }
 
+    let user, blogs, contests;
     try {
       let res_user = await fetch(
         `https://codeforces.com/api/user.info?handles=${this.state.handle}`
       );
+      let data_user = await res_user.json();
+      user = data_user.result[0];
+    } catch (err) {
+      console.log("Error : " + err);
+      user = null;
+      this.setState({ error: err });
+      text && (text.style.transform = "translate(0,0rem)");
+    }
+    try {
       let res_blogs = await fetch(
         `https://codeforces.com/api/user.blogEntries?handle=${this.state.handle}`
       );
+
+      let data_blogs = await res_blogs.json();
+      blogs = data_blogs.result;
+    } catch (err) {
+      blogs = null;
+      console.log("Error : " + err);
+      this.setState({ error: err });
+      text && (text.style.transform = "translate(0,0rem)");
+    }
+    try {
       let res_contests = await fetch(
         `https://codeforces.com/api/user.rating?handle=${this.state.handle}`
       );
-      let data_user = await res_user.json();
-      let user = data_user.result[0];
-
-      let data_blogs = await res_blogs.json();
-      let blogs = data_blogs.result;
 
       let data_contests = await res_contests.json();
-      let contests = data_contests.result;
+      contests = data_contests.result;
 
+      text && (text.style.transform = "translate(0,0rem)");
+    } catch (err) {
+      console.log("Error : " + err);
+      contests = null;
+      this.setState({ error: err });
+      text && (text.style.transform = "translate(0,0rem)");
+    }
+    if (user) {
       this.setState({
         blogs: blogs,
         user: user,
@@ -59,11 +82,6 @@ class App extends Component {
         error: null
       });
       sessionStorage.setItem("handle", this.state.handle);
-      text && (text.style.transform = "translate(0,0rem)");
-    } catch (err) {
-      console.log("Error : " + err);
-      this.setState({ error: err });
-      text && (text.style.transform = "translate(0,0rem)");
     }
   };
 

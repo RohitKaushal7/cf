@@ -75,7 +75,10 @@ const User = props => {
                 />
               </Card>
               <Card p="0">
-                <Label for="Blogs written" value={props.blogs.length} />
+                <Label
+                  for="Blogs written"
+                  value={props.blogs ? props.blogs.length : "Can't Fetch"}
+                />
               </Card>
               <Card p="0">
                 <Label

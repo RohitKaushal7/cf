@@ -3,6 +3,9 @@ import "./Blogs.scss";
 import Blog from "./Blog";
 
 const Blogs = props => {
+  if (!props.blogs) {
+    return null;
+  }
   return (
     <div className="blogs">
       <h1>Blogs</h1>
