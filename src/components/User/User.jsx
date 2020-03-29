@@ -3,6 +3,7 @@ import "./User.scss";
 import Status from "../Status/Status";
 import Label from "../Label/Label";
 import Card from "../Card/Card";
+import Submissions from "../Submissions/Submissions";
 
 const User = props => {
   let colors = {
@@ -17,6 +18,10 @@ const User = props => {
     "international grandmaster": "#ff3333",
     "legendary grandmaster": "#aa0000"
   };
+
+  let n_submissions = props.submissions.filter(
+    sub => new Date().getTime() - sub.creationTimeSeconds * 1000 < 86400000
+  ).length;
   return (
     <div className="container">
       <div className="flex-v">
@@ -26,6 +31,9 @@ const User = props => {
           </div>
           <div className="content">
             <Status date={new Date(props.user.lastOnlineTimeSeconds * 1000)} />
+            <div className="n_submissions">
+              <b>{n_submissions}</b> submissions in last 24hrs
+            </div>
             <h1>{props.user.handle}</h1>
             <div className="rating">
               {props.user.rating}{" "}

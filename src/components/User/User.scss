@@ -19,6 +19,13 @@
       //   width: 100%;
     }
   }
+  .n_submissions {
+    margin-left: 1.5rem;
+    color: #333;
+    b {
+      color: #000;
+    }
+  }
   .content {
     margin-left: 4em;
     display: flex;
@@ -27,6 +34,7 @@
     h1 {
       font-size: 4em;
       margin-bottom: 0.2em;
+      margin-top: 2rem;
     }
 
     .rating,

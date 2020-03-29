@@ -62,32 +62,19 @@ const Submission = props => {
 };
 
 class Submissions extends Component {
-  state = { submissions: null, error: null };
-  componentDidMount = async () => {
-    try {
-      let res_submissions = await fetch(
-        `https://codeforces.com/api/user.status?handle=${this.props.handle}&from=1&count=50`
-      );
-      let data_submissions = await res_submissions.json();
-      let submissions = data_submissions.result;
-      this.setState({ submissions: submissions });
-    } catch (err) {
-      this.setState({ error: err });
-    }
-  };
   render() {
     return (
       <div className="submissions">
         <h1>Recent Submissions</h1>
         <div className="desc">Last 50 submissions</div>
         <div className="items">
-          {this.state.submissions
-            ? this.state.submissions.map(s => (
+          {this.props.submissions
+            ? this.props.submissions.map(s => (
                 <Submission submission={s} key={s.id} />
               ))
             : null}
         </div>
-        {this.state.error ? (
+        {this.props.error ? (
           <Error
             pos="relative"
             msg={{ message: "Failed to Fetch : CORS Error" }}

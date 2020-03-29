@@ -34,7 +34,12 @@ const Dashboard = props => {
   return (
     <Layout theme={colors[user.rank]}>
       <Button value="Log Out" onClick={props.logOut} />
-      <User user={props.user} blogs={props.blogs} contests={props.contests} />
+      <User
+        user={props.user}
+        blogs={props.blogs}
+        contests={props.contests}
+        submissions={props.submissions}
+      />
       <Card p="2em 2em" bg="#fffe">
         <LineChart
           width={700}
@@ -129,7 +134,11 @@ const Dashboard = props => {
         </Card>
         <Card w="100%" bg="transparent" dir="row" m="3em 2em" p="1em" res>
           <Card w="100%" bg="transparent" m="0 1em 0 0">
-            <Submissions handle={props.handle} />
+            <Submissions
+              handle={props.handle}
+              submissions={props.submissions}
+              error={props.error}
+            />
           </Card>
           <Card bg="#eee9" w="100%" m="0">
             <Contests contests={props.contests} />

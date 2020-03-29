@@ -13,6 +13,7 @@
   .items {
     max-height: 50em;
     overflow: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     // flex-wrap: wrap;

@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import "./style.css";
 import Home from "./pages/home";
 import Dashboard from "./pages/dashboard";
+import uuid from "react-uuid";
 
 class App extends Component {
   state = {
     handle: "",
+    handleKeys: [],
     loggedIn: false,
     user: null,
     blogs: null,
@@ -14,7 +16,20 @@ class App extends Component {
   };
   handleChange = e => {
     let value = e.target.value.split(" ").join("");
-    this.setState({ handle: value });
+    let newValue = value.split("");
+    let oldValue = this.state.handle.split("");
+    let changedIndex;
+    console.log(oldValue, newValue);
+    for (let i = 0; i <= oldValue.length; ++i) {
+      if (oldValue[i] != newValue[i]) {
+        changedIndex = i;
+        console.log(oldValue, newValue, i);
+        break;
+      }
+    }
+    let handleKeys = [...this.state.handleKeys];
+    handleKeys.splice(changedIndex, 0, uuid());
+    this.setState({ handle: value, handleKeys: handleKeys });
   };
   componentDidMount = () => {
     let handle = sessionStorage.getItem("handle");
@@ -33,7 +48,7 @@ class App extends Component {
       text.style.transform = "translate(0,-3rem)";
     }
 
-    let user, blogs, contests;
+    let user, blogs, contests, submissions;
     try {
       let res_user = await fetch(
         `https://codeforces.com/api/user.info?handles=${this.state.handle}`
@@ -74,12 +89,27 @@ class App extends Component {
       this.setState({ error: err });
       text && (text.style.transform = "translate(0,0rem)");
     }
+
+    try {
+      let res_submissions = await fetch(
+        `https://codeforces.com/api/user.status?handle=${this.state.handle}&from=1&count=50`
+      );
+      let data_submissions = await res_submissions.json();
+      submissions = data_submissions.result;
+    } catch (err) {
+      console.log("Error : " + err);
+      submissions = null;
+      this.setState({ error: err });
+      text && (text.style.transform = "translate(0,0rem)");
+    }
+
     if (user) {
       this.setState({
         blogs: blogs,
         user: user,
         loggedIn: true,
         contests: contests,
+        submissions: submissions,
         error: null
       });
       sessionStorage.setItem("handle", this.state.handle);
@@ -98,6 +128,7 @@ class App extends Component {
       page = (
         <Home
           handle={this.state.handle}
+          handleKeys={this.state.handleKeys}
           onChange={this.handleChange}
           onSubmit={this.submit}
           error={this.state.error}
@@ -110,6 +141,8 @@ class App extends Component {
           user={this.state.user}
           blogs={this.state.blogs}
           contests={this.state.contests}
+          submissions={this.state.submissions}
+          error={this.state.error}
           logOut={this.logOut}
         />
       );
