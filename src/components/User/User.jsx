@@ -35,6 +35,14 @@ const User = props => {
               <b>{n_submissions}</b> submissions in last 24hrs
             </div>
             <h1>{props.user.handle}</h1>
+            <div className="Name">
+              {props.user.firstName ? (
+                <div className="firstName">{props.user.firstName}</div>
+              ) : null}
+              {props.user.lastName ? (
+                <div className="lastName">{props.user.lastName}</div>
+              ) : null}
+            </div>
             <div className="rating">
               {props.user.rating}{" "}
               <span

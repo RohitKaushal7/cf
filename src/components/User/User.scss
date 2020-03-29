@@ -36,6 +36,15 @@
       margin-bottom: 0.2em;
       margin-top: 2rem;
     }
+    .Name {
+      display: flex;
+      margin-bottom: 0.5em;
+      .firstName,
+      .lsatName {
+        display: inline-block;
+        margin-right: 0.2em;
+      }
+    }
 
     .rating,
     .best-rating {
