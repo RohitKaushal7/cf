@@ -38,6 +38,22 @@ const Contest = props => {
 const Contests = props => {
   let contests = [...props.contests];
   contests.reverse();
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
+  let oldMonth = new Date("12 mar 1970");
+  let month = new Date(contests[0].ratingUpdateTimeSeconds * 1000);
   return (
     <div className="contests">
       <h1>Contests</h1>
@@ -45,9 +61,24 @@ const Contests = props => {
         participated in <b>{props.contests.length}</b> Contests
       </div>
       <div className="items">
-        {contests.map(c => (
-          <Contest contest={c} key={c.contestId} />
-        ))}
+        {contests.map(c => {
+          let header = null;
+          month = new Date(c.ratingUpdateTimeSeconds * 1000);
+          if (month.getMonth() != oldMonth.getMonth()) {
+            header = (
+              <div className="month">
+                {months[month.getMonth()] + " " + month.getFullYear()}
+              </div>
+            );
+            oldMonth = month;
+          }
+          return (
+            <>
+              {header}
+              <Contest contest={c} key={c.contestId} />
+            </>
+          );
+        })}
       </div>
     </div>
   );

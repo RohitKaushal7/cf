@@ -16,24 +16,38 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
     // flex-wrap: wrap;
+    .day {
+      color: #777;
+      padding: 1.5em 0.5em 0.5em;
+      // border-bottom: 1px solid #7775;
+      // width: 75%;
+      background: #fff;
+      z-index: 2;
+      position: sticky;
+      top: 0;
+    }
   }
 }
 
 .submission {
   background: #fffb;
-  border-radius: 1em;
+  border-radius: 0.3em;
   position: relative;
-  padding: 0.5em 1em;
+  padding: 0.1em 1em 0.5em 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 0 0.3em 0;
+  margin: 0.3em 0.5em;
   transition: all 0.2s;
   cursor: default;
 
   &:hover {
-    background: #eeee;
+    background: #eeee !important;
+    .c_id {
+      opacity: 1;
+    }
   }
 
   .date,
@@ -43,6 +57,7 @@
   .c_id {
     font-weight: bold;
     color: #ccc;
+    opacity: 0;
   }
 
   .light {
@@ -92,13 +107,13 @@
       margin-right: 1em;
 
       .verdict {
-        font-size: 1.5em;
-        margin-bottom: 0.5em;
+        font-size: 1.3em;
+        // margin-bottom: 0.5em;
       }
       .cpu {
         display: flex;
         * {
-          margin: 0.5em;
+          margin: 0 0 0 0.5em;
         }
       }
     }
