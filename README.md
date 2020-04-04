@@ -1,6 +1,8 @@
-# [Codeforces Dashboard](https://rohitkaushal7.github.io/cf/)
+# Codeforces Dashboard
 
-> Codeforces Dashboard UI
+[![HitCount](http://hits.dwyl.com/RohitKaushal7/cf.svg)](http://hits.dwyl.com/RohitKaushal7/cf)
+
+> [Codeforces Dashboard](https://rohitkaushal7.github.io/cf/) UI
 > <br>
 > User Rating, Rank, Recent Submissions, Contests, Blogs.
 
