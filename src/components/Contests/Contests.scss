@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: 1em;
   margin: 0 1em;
+  position: relative;
   h1 {
     margin-bottom: 0;
   }
@@ -16,8 +17,11 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
 
+    &.items_grid{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
     .month {
       color: #777;
       padding: 1.5em 0.5em 0.5em;
@@ -47,7 +51,7 @@
   }
   .c_id {
     font-weight: bold;
-    color: #ccc;
+    color: #aaa;
   }
 
   .rank {
@@ -96,9 +100,21 @@
     font-weight: bold;
   }
   .newRating {
-    color: #ddd;
+    color: #ccc;
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 0.5em;
+  }
+}
+
+.contest_grid{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5em;
+  height: 5em;
+  margin: 0.2em;
+  .c_id{
+    font-size: 0.7em;
   }
 }

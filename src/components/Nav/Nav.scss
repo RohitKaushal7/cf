@@ -1,0 +1,23 @@
+nav{
+    height: 3em;
+    display: flex;
+    width: 80%;
+    padding: 1.5em;
+    margin: auto;
+    justify-content: flex-end;    
+}
+
+.link{
+    color: #999;
+  border-radius: 1em;
+  border: none;
+  padding: 0.7em 1.2em;
+  outline: none;
+  transition: all 0.2s;
+  margin: 0.2em 0.5em;
+  cursor: pointer;
+
+  &:hover {
+    color: #2583ff;
+  }
+}

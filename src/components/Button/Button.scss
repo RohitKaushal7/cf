@@ -4,7 +4,9 @@
   border: none;
   background: #fff;
   padding: 0.7em 1.2em;
+  outline: none;
   transition: all 0.2s;
+  margin: 0.2em 0.5em;
   cursor: pointer;
   font-weight: bold;
   box-shadow: -2px 2px 7px #0003;
@@ -15,7 +17,7 @@
   }
 }
 
-.logout {
+.tr {
   position: absolute;
   top: 2em;
   right: 3em;

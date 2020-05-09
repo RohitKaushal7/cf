@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Button from "../components/Button/Button";
 import User from "../components/User/User";
 import Layout from "../components/Layouts/layout";
 import Blogs from "../components/Blogs/Blogs";
 import Submissions from "../components/Submissions/Submissions";
 import Contests from "../components/Contests/Contests";
+import Nav from "../components/Nav/Nav"
 import {
   LineChart,
   Line,
@@ -16,6 +16,7 @@ import {
   ReferenceArea
 } from "recharts";
 import Card from "../components/Card/Card";
+import { Link } from "react-router-dom";
 
 const Dashboard = props => {
   let { handle, user } = props;
@@ -33,7 +34,7 @@ const Dashboard = props => {
   };
   return (
     <Layout theme={colors[user.rank]}>
-      <Button value="Log Out" onClick={props.logOut} />
+      <Nav {...props} />
       <User
         user={props.user}
         blogs={props.blogs}
@@ -140,7 +141,7 @@ const Dashboard = props => {
               error={props.error}
             />
           </Card>
-          <Card bg="#eee9" w="100%" m="0">
+          <Card bg="linear-gradient(to bottom, #eee,transparent)" jc="flex-start" w="100%" m="0">
             <Contests contests={props.contests} />
           </Card>
         </Card>

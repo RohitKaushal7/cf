@@ -13,7 +13,6 @@ const Home = props => {
             type={"text"}
             placeholder="tourist"
             value={props.handle}
-            keys={props.handleKeys}
             onChange={props.onChange}
           />
         </form>

@@ -7,7 +7,7 @@ class Input extends Component {
     let elems = null;
     let str = Array.from(this.props.value);
     elems = str.map((ch, i, arr) => (
-      <span key={this.props.keys[i]} className="ch">
+      <span key={ch + i} className="ch">
         {ch}
       </span>
     ));

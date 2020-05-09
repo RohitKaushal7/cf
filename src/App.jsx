@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "./style.css";
 import Home from "./pages/home";
 import Dashboard from "./pages/dashboard";
+import Stalk from "./pages/Stalk";
 import uuid from "react-uuid";
+import { Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   state = {
     handle: "",
-    handleKeys: [],
     loggedIn: false,
     user: null,
     blogs: null,
@@ -16,20 +17,7 @@ class App extends Component {
   };
   handleChange = e => {
     let value = e.target.value.split(" ").join("");
-    let newValue = value.split("");
-    let oldValue = this.state.handle.split("");
-    let changedIndex;
-    console.log(oldValue, newValue);
-    for (let i = 0; i <= oldValue.length; ++i) {
-      if (oldValue[i] != newValue[i]) {
-        changedIndex = i;
-        console.log(oldValue, newValue, i);
-        break;
-      }
-    }
-    let handleKeys = [...this.state.handleKeys];
-    handleKeys.splice(changedIndex, 0, uuid());
-    this.setState({ handle: value, handleKeys: handleKeys });
+    this.setState({ handle: value });
   };
   componentDidMount = () => {
     let handle = sessionStorage.getItem("handle");
@@ -147,7 +135,16 @@ class App extends Component {
         />
       );
     }
-    return <>{page}</>;
+    return (
+      <Switch>
+        <Route path="/stalk" exact>
+          <Stalk />
+        </Route>
+        <Route path="/" exact>
+          {page}
+        </Route>
+      </Switch>
+    )
   }
 }
 

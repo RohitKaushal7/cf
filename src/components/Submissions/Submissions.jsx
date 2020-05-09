@@ -77,25 +77,25 @@ class Submissions extends Component {
         <div className="items">
           {this.props.submissions
             ? this.props.submissions.map(s => {
-                let header = null;
-                day = new Date(s.creationTimeSeconds * 1000);
-                if (day.toDateString() != oldDay.toDateString()) {
-                  header = (
-                    <div className="day">
-                      {day.toDateString() == new Date().toDateString()
-                        ? "Today"
-                        : day.toDateString()}
-                    </div>
-                  );
-                  oldDay = day;
-                }
-                return (
-                  <>
-                    {header}
-                    <Submission submission={s} key={s.id} />
-                  </>
+              let header = null;
+              day = new Date(s.creationTimeSeconds * 1000);
+              if (day.toDateString() != oldDay.toDateString()) {
+                header = (
+                  <div key={s.id + "s"} className="day">
+                    {day.toDateString() == new Date().toDateString()
+                      ? "Today"
+                      : day.toDateString()}
+                  </div>
                 );
-              })
+                oldDay = day;
+              }
+              return (
+                <div key={s.id}>
+                  {header}
+                  <Submission submission={s} key={s.id} />
+                </div>
+              );
+            })
             : null}
         </div>
         {this.props.error ? (
