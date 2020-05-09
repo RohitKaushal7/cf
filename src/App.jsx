@@ -140,7 +140,7 @@ class App extends Component {
         <Route path="/stalk" exact>
           <Stalk />
         </Route>
-        <Route path="/" exact>
+        <Route path="/">
           {page}
         </Route>
       </Switch>
