@@ -1,6 +1,7 @@
 # Codeforces Dashboard
 
 [![HitCount](http://hits.dwyl.com/RohitKaushal7/cf.svg)](http://hits.dwyl.com/RohitKaushal7/cf)
+[![Build Status](https://travis-ci.org/RohitKaushal7/cf.svg?branch=master)](https://travis-ci.org/RohitKaushal7/cf)
 
 > [Codeforces Dashboard](https://rohitkaushal7.github.io/cf/) UI
 > <br>
